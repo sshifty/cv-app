@@ -301,7 +301,8 @@ class App extends React.Component {
     const oldPage = document.body.innerHTML;
     document.body.innerHTML = orderHTML;
     window.print();
-    document.body.innerHTML = oldPage
+    document.body.innerHTML = oldPage;
+    window.location.reload(false);
 }
 
   render(){
