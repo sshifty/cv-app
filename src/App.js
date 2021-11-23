@@ -232,6 +232,8 @@ class App extends React.Component {
         address:'',
         phone:'',
         avatar:'',
+        title:'',
+        description:''
       },
       education:[
         {
