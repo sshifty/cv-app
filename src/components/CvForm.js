@@ -2,8 +2,7 @@ import React from 'react';
 import GenInfo from './GenInfo';
 import Education from './Education';
 import Experience from './Experience';
-import Preview from './Preview';
-import ReactToPrint from 'react-to-print';
+
 
 class CvForm extends React.Component{
     

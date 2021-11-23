@@ -3,7 +3,7 @@ import React from 'react';
 import CvForm from './components/CvForm';
 import Preview from './components/Preview';
 import ryan from './img/ryan.jpg';
-import ReactToPrint from 'react-to-print';
+
 
 class App extends React.Component {
 
