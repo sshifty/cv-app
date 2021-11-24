@@ -1,9 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 *{
   margin:0;
   padding:0;
   box-sizing: border-box;
 }
-
+@font-face {
+  font-family: 'Roboto';
+  src: local('Roboto'), url(../src/fonts/Roboto-Regular.ttf) format('truetype');
+}
 @page { margin: 0; }
 
 :root{
@@ -31,6 +35,7 @@
 body{
   background-color: #CCCCCD;
   color:rgb(51, 51, 51);
+  font-family: 'Roboto', sans-serif;
 }
 
 .App{
@@ -115,7 +120,7 @@ body{
   display: flex;
   justify-content: space-between;
   gap:1rem;
-  margin-bottom:0.5rem;
+  margin-bottom:1rem;
 }
 .item-container {
   text-align: right;
@@ -210,10 +215,7 @@ body{
 }
 
 
-input:invalid,
-textarea:invalid {
-  box-shadow: 0 0 5px 1px red;
-}
+
 
 input:focus{
   outline: none;

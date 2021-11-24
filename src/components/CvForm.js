@@ -9,6 +9,7 @@ class CvForm extends React.Component{
 
     render(){       
         const {
+            
             printOrder,
             loadExample,
             reset,
@@ -75,7 +76,7 @@ class CvForm extends React.Component{
                         fillSchoolName={fillSchoolName}
                         fillDegree={fillDegree}
                         fillSchoolStartDate={fillSchoolStartDate}
-                        fillSchoolEndDate={fillSchoolEndDate}
+                        fillSchoolEndDate={fillSchoolEndDate}                        
                         index={i} 
                         key={i}
                         infos={infos.education} 

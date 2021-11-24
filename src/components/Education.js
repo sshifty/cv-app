@@ -5,11 +5,13 @@ class Education extends React.Component{
    
 
     render(){
+
+        
         const {infos,index,fillSchoolName,fillDegree,fillSchoolStartDate,fillSchoolEndDate,deleteEducation}=this.props;
         let deleteButton=index>0?<button className="btn btn-del" onClick={deleteEducation.bind(this,index)}>Delete</button>:null;        
         let lineBreak=index===1?<div className="line" ></div>:null;
         let lineBreak2=index>0?<div className="line" ></div>:null;
-
+        
         
         return(    
             
@@ -29,6 +31,7 @@ class Education extends React.Component{
                         <label>To</label>
                         <input value={infos[index].enddate} onChange={fillSchoolEndDate.bind(this,index)} type="date" name="to" id="to" required /> 
                     </div>
+                    
                     {lineBreak2}
                     <div className="btn-container">
                         {deleteButton}                 

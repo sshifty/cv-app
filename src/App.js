@@ -23,7 +23,7 @@ class App extends React.Component {
           schoolname:'',
           degree:'',
           startdate:'',
-          enddate:''
+          enddate:'',          
         },
       ],
       work:[
@@ -31,7 +31,7 @@ class App extends React.Component {
           companyname:'',
           position:'',
           startdate:'',
-          enddate:''
+          enddate:'',          
         },
       ]
     }
@@ -254,43 +254,44 @@ class App extends React.Component {
     });
   };
 
+  
 
   loadExample=()=>{
     this.setState({
       general:{
-        fullname:'Ryan Reynolds',
-        email:'ryanreyndols@HOT.com',
-        address:'US Hot streeet 69 rim street',
+        fullname:'John Doe',
+        email:'JohnDoe@gmail.com',
+        address:'US Hollywood street 45 Groove street',
         phone:'+12548796218',
         avatar:ryan,
-        title:'Actor',
-        description:`Hey I'm Ryan Reynolds. I think you already know me, hot ugy hehe hire me! Ákos is my favourite fan haha!`
+        title:'Software Developer',
+        description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut dapibus ut dolor at mattis. Quisque leo nulla, fermentum quis velit ac, dictum porttitor ex. Curabitur varius ac orci ut semper. Sed et maximus sem. Quisque at sem erat. Aliquam sit amet purus diam. Suspendisse suscipit est sed consequat mollis. Pellentesque a condimentum justo, in hendrerit sapien. Morbi at est sit amet augue sollicitudin bibendum eu sagittis diam. Suspendisse rhoncus fringilla aliquam. Sed ac velit sed elit egestas tincidunt. Ut id nunc vitae leo commodo egestas accumsan a velit. Mauris luctus ultricies semper. Quisque efficitur felis quis ultricies vulputate. Integer sed mollis lacus.'
       },
       education:[
         {
           schoolname:'Kwantlen Polytechnic University',
-          degree:'Acting',
+          degree:'Computer Science',
           startdate:'2000-01-01',
           enddate:'2004-05-05'
         },
         {
-          schoolname:'Sexy University',
-          degree:'Rimjob Specialist',
+          schoolname:'Yale University',
+          degree:'Masters of Computer Science ',
           startdate:'2005-05-01',
           enddate:'2006-05-05'
         },
       ],
       work:[
         {
-          companyname:'Marvel Studio',
-          position:'Actor',
-          startdate:'2014-02-03',
+          companyname:'Facebook',
+          position:'Junior Software Developer',
+          startdate:'2007-02-03',
           enddate:'2016-01-01'
         },
         {
-          companyname:'Marvel Studio',
-          position:'Actor',
-          startdate:'2017-02-03',
+          companyname:'Google',
+          position:'CEO',
+          startdate:'2016-02-03',
           enddate:'2018-01-01'
         },
       ]
@@ -334,6 +335,7 @@ class App extends React.Component {
           reset={this.reset}
           loadExample={this.loadExample}
           printOrder={this.printOrder}
+          
           />
           
         
