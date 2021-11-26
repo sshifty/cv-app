@@ -1,10 +1,10 @@
 import React from 'react';
 
 
-class Experience extends React.Component{
+const Experience=props=>{
     
 
-    render(){
+    
         const {  
             infos,
             index,
@@ -13,7 +13,7 @@ class Experience extends React.Component{
             fillWorkStartDate,
             fillWorkEndDate,
             deleteWork            
-          } = this.props;
+          } = props;
           let deleteButton=index>0?<button className="btn btn-del" onClick={deleteWork.bind(this,index)}>Delete</button>:null;
           let lineBreak=index===1?<div className="line" ></div>:null;
           let lineBreak2=index>0?<div className="line" ></div>:null;
@@ -46,7 +46,7 @@ class Experience extends React.Component{
             
            
         )
-    }
+    
 
 }
 

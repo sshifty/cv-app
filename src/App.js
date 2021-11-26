@@ -1,231 +1,232 @@
 import './App.css';
-import React from 'react';
+import React,{useState} from 'react';
 import CvForm from './components/CvForm';
 import Preview from './components/Preview';
 import ryan from './img/ryan.jpg';
 
 
-class App extends React.Component {
+const App=props=>{
 
-  constructor(props){
-    super(props);
-
-    this.state={
-      general:{
-        fullname:'',
-        email:'',
-        address:'',
-        phone:'',
-        avatar:'',
+  const [cvState,setCvState]=useState({
+    general:{
+      fullname:'',
+      email:'',
+      address:'',
+      phone:'',
+      avatar:'',
+    },
+    education:[
+      {
+        schoolname:'',
+        degree:'',
+        startdate:'',
+        enddate:'',          
       },
-      education:[
-        {
-          schoolname:'',
-          degree:'',
-          startdate:'',
-          enddate:'',          
-        },
-      ],
-      work:[
-        {
-          companyname:'',
-          position:'',
-          startdate:'',
-          enddate:'',          
-        },
-      ]
-    }
-  }
-
+    ],
+    work:[
+      {
+        companyname:'',
+        position:'',
+        startdate:'',
+        enddate:'',          
+      },
+    ]
+  })
   
-  fillFullName=(e)=>{    
-    this.setState(prevState=>{
+  
+  const fillFullName=(e)=>{    
+    setCvState(prevState=>{
       let tempGen=prevState.general;
       tempGen.fullname=e.target.value;
       return {
+        ...prevState,
         general:tempGen
       }
     });
   };
-  fillAddress=(e)=>{    
-    this.setState(prevState=>{
+  const fillAddress=(e)=>{    
+    setCvState(prevState=>{
       let tempGen=prevState.general;
       tempGen.address=e.target.value;
       return {
+        ...prevState,
         general:tempGen
       }
     });
   };
-  fillEmail=(e)=>{    
-    this.setState(prevState=>{
+  const fillEmail=(e)=>{    
+    setCvState(prevState=>{
       let tempGen=prevState.general;
       tempGen.email=e.target.value;
       return {
+        ...prevState,
         general:tempGen
       }
     });
   };
 
-  fillPhone=(e)=>{    
-    this.setState(prevState=>{
+  const fillPhone=(e)=>{    
+    setCvState(prevState=>{
       let tempGen=prevState.general;
       tempGen.phone=e.target.value;
       return {
+        ...prevState,
         general:tempGen
       }
     });
   };
 
-  fillTitle=(e)=>{    
-    this.setState(prevState=>{
+  const fillTitle=(e)=>{    
+    setCvState(prevState=>{
       let tempGen=prevState.general;
       tempGen.title=e.target.value;
       return {
+        ...prevState,
         general:tempGen
       }
     });
   };
   
-  fillDescription=(e)=>{    
-    this.setState(prevState=>{
+  const fillDescription=(e)=>{    
+    setCvState(prevState=>{
       let tempGen=prevState.general;
       tempGen.description=e.target.value;
       return {
+        ...prevState,
         general:tempGen
       }
     });
   };
-  fillAvatar=(e)=>{   
-    console.log(e.target.files[0]) 
-    this.setState(prevState=>{
+  const fillAvatar=(e)=>{   
+    setCvState(prevState=>{
       let tempGen=prevState.general;
       let av=URL.createObjectURL(e.target.files[0])
       tempGen.avatar=av;
-      return {
+      return {...prevState,
         general:tempGen
       }
     });
   };
 
-  fillSchoolStartDate=(index,e)=>{    
-    this.setState(prevState=>{
+  const fillSchoolStartDate=(index,e)=>{    
+    setCvState(prevState=>{
       let tempEd=[...prevState.education];
       tempEd[index].startdate=e.target.value;
-      return {
+      return {...prevState,
         education:tempEd
       }
     });
   };
-  fillSchoolEndDate=(index,e)=>{    
-    this.setState(prevState=>{
+  const fillSchoolEndDate=(index,e)=>{    
+    setCvState(prevState=>{
       let tempEd=[...prevState.education];
       tempEd[index].enddate=e.target.value;
-      return {
+      return {...prevState,
         education:tempEd
       }
     });
   };
 
-  fillDegree=(index,e)=>{
-    this.setState(prevState=>{
+  const fillDegree=(index,e)=>{
+    setCvState(prevState=>{
       let tempEd=[...prevState.education];
       tempEd[index].degree=e.target.value;
-      return {
+      return {...prevState,
         education:tempEd
       }
     });
   };
 
-  fillSchoolName=(index,e)=>{
-    this.setState(prevState=>{
+  const fillSchoolName=(index,e)=>{
+    setCvState(prevState=>{
       let tempEd=[...prevState.education];
       tempEd[index].schoolname=e.target.value;
-      return {
+      return {...prevState,
         education:tempEd
       }
     });
   }
-  newEducation=(e)=>{
+  const newEducation=(e)=>{
     e.preventDefault();
-    this.setState(prevState=>{
-      return {
+    setCvState(prevState=>{
+      return {...prevState,
         education:[...prevState.education,{}]
       }
     });
   }
 
-  fillCompanyName=(index,e)=>{
-    this.setState(prevState=>{
+  const fillCompanyName=(index,e)=>{
+    setCvState(prevState=>{
       let tempWork=[...prevState.work];
       tempWork[index].companyname=e.target.value;
-      return {
+      return {...prevState,
         work:tempWork
       }
     });
   };
-  fillPosition=(index,e)=>{
-    this.setState(prevState=>{
+  const  fillPosition=(index,e)=>{
+    setCvState(prevState=>{
       let tempWork=[...prevState.work];
       tempWork[index].position=e.target.value;
-      return {
+      return {...prevState,
         work:tempWork
       }
     });
   };
-  fillWorkStartDate=(index,e)=>{
-    this.setState(prevState=>{
+  const  fillWorkStartDate=(index,e)=>{
+    setCvState(prevState=>{
       let tempWork=[...prevState.work];
       tempWork[index].startdate=e.target.value;
-      return {
+      return {...prevState,
         work:tempWork
       }
     });
   };
-  fillWorkEndDate=(index,e)=>{
-    this.setState(prevState=>{
+  const fillWorkEndDate=(index,e)=>{
+    setCvState(prevState=>{
       let tempWork=[...prevState.work];
       tempWork[index].enddate=e.target.value;
-      return {
+      return {...prevState,
         work:tempWork
       }
     });
   };
   
-  newWork=(e)=>{
+  const newWork=(e)=>{
     e.preventDefault();
-    this.setState(prevState=>{
-      return {
+    setCvState(prevState=>{
+      return {...prevState,
         work:[...prevState.work,{}]
       }
     });
   }
-  deleteWork=(index,e)=>{
+  const deleteWork=(index,e)=>{
     e.preventDefault();
-    this.setState(prevState=>{      
+    setCvState(prevState=>{      
       let tempWork=[...prevState.work];
       tempWork.splice(index,1);
      
-      return {
+      return {...prevState,
         work:tempWork
       }
     });
   };
 
-  deleteEducation=(index,e)=>{
+  const deleteEducation=(index,e)=>{
     e.preventDefault();
-    this.setState(prevState=>{
+    setCvState(prevState=>{
       let tempEd=[...prevState.education];
       tempEd.splice(index,1);      
-      return {
+      return {...prevState,
         education:tempEd
       }
     });
   };
 
   
-  reset=()=>{
+  const reset=()=>{
     
-    this.setState({
+    setCvState({
       general:{
         fullname:'',
         email:'',
@@ -256,8 +257,8 @@ class App extends React.Component {
 
   
 
-  loadExample=()=>{
-    this.setState({
+  const loadExample=()=>{
+    setCvState({
       general:{
         fullname:'John Doe',
         email:'JohnDoe@gmail.com',
@@ -298,7 +299,7 @@ class App extends React.Component {
     })
   }
 
-  printOrder = () => {
+  const  printOrder = () => {
     const printableElements = document.getElementById('printme').innerHTML;
     const orderHTML = '<html><body>' + printableElements + '</body></html>'
     const oldPage = document.body.innerHTML;
@@ -308,44 +309,45 @@ class App extends React.Component {
     window.location.reload(false);
 }
 
-  render(){
+
+  
     return (
       <div className="App">
         <CvForm className="cv-form box"
-          infos={this.state} 
-          newEducation={this.newEducation}
-          fillSchoolName={this.fillSchoolName}
-          fillDegree={this.fillDegree}
-          fillSchoolStartDate={this.fillSchoolStartDate}  
-          fillSchoolEndDate={this.fillSchoolEndDate}
-          fillFullName={this.fillFullName}  
-          fillEmail={this.fillEmail}  
-          fillPhone={this.fillPhone} 
-          fillAddress={this.fillAddress}
-          fillTitle={this.fillTitle}
-          fillDescription={this.fillDescription} 
-          fillAvatar={this.fillAvatar}
-          fillCompanyName={this.fillCompanyName}  
-          fillPosition={this.fillPosition}  
-          fillWorkStartDate={this.fillWorkStartDate}  
-          fillWorkEndDate={this.fillWorkEndDate}
-          newWork={this.newWork}
-          deleteWork={this.deleteWork}  
-          deleteEducation={this.deleteEducation}
-          reset={this.reset}
-          loadExample={this.loadExample}
-          printOrder={this.printOrder}
+          infos={cvState} 
+          newEducation={newEducation}
+          fillSchoolName={fillSchoolName}
+          fillDegree={fillDegree}
+          fillSchoolStartDate={fillSchoolStartDate}  
+          fillSchoolEndDate={fillSchoolEndDate}
+          fillFullName={fillFullName}  
+          fillEmail={fillEmail}  
+          fillPhone={fillPhone} 
+          fillAddress={fillAddress}
+          fillTitle={fillTitle}
+          fillDescription={fillDescription} 
+          fillAvatar={fillAvatar}
+          fillCompanyName={fillCompanyName}  
+          fillPosition={fillPosition}  
+          fillWorkStartDate={fillWorkStartDate}  
+          fillWorkEndDate={fillWorkEndDate}
+          newWork={newWork}
+          deleteWork={deleteWork}  
+          deleteEducation={deleteEducation}
+          reset={reset}
+          loadExample={loadExample}
+          printOrder={printOrder}
           
           />
           
         
         <Preview className="preview "
-          infos={this.state}    
+          infos={cvState}    
           printableId='printme'     
         />
       </div>
     );
-  }
+  
 }
 
 export default App;

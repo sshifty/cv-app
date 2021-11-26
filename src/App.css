@@ -95,6 +95,7 @@ body{
   flex:1;
 }
 .right{
+  max-width: 150px;
   padding:.5rem;
   flex:0.2;  
   background-color:#dddd;  
@@ -107,7 +108,8 @@ body{
 }
 .desc .desc-p,
 .title,
-.name{  
+.name,
+.right{  
   word-break: break-all;
   white-space: normal;
 }

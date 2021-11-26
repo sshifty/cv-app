@@ -1,16 +1,16 @@
 import React from 'react';
 import emptyAvatar from '../img/empty_avatar.png'
 
-class Preview extends React.Component{
+const Preview =props=>{
     
-    render(){
-        const {className,infos}=this.props;
+    
+        const {className,infos}=props;
         let {avatar}=infos.general;
         if(!avatar){
             avatar=emptyAvatar;
         }
         return(
-            <div className={className} id={this.props.printableId}>
+            <div className={className} id={props.printableId}>
                 <div className="preview-navbar">
                     <div className="full-name">
                         <h2>{infos.general.fullname}</h2>
@@ -83,7 +83,7 @@ class Preview extends React.Component{
                 </div>
             </div>
         )
-    }
+    
 }
 
 export default Preview;

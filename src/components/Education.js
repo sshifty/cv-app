@@ -1,13 +1,12 @@
 import React from 'react';
 
 
-class Education extends React.Component{
+const Education=props=>{
    
 
-    render(){
-
+    
         
-        const {infos,index,fillSchoolName,fillDegree,fillSchoolStartDate,fillSchoolEndDate,deleteEducation}=this.props;
+        const {infos,index,fillSchoolName,fillDegree,fillSchoolStartDate,fillSchoolEndDate,deleteEducation}=props;
         let deleteButton=index>0?<button className="btn btn-del" onClick={deleteEducation.bind(this,index)}>Delete</button>:null;        
         let lineBreak=index===1?<div className="line" ></div>:null;
         let lineBreak2=index>0?<div className="line" ></div>:null;
@@ -41,7 +40,7 @@ class Education extends React.Component{
             
            
         )
-    }
+    
 
 }
 
